@@ -134,7 +134,7 @@ const About = () => {
                   transition={{ repeat: Infinity, duration: 3 }}
                 />
                 <img
-                  src="src/assets/aboutimage.png"
+                  src="https://umuryango.rw/local/cache-vignettes/L487xH604/arton62671-64216.png?1707947245"
                   alt="Jolly Mutesi professional portrait"
                   className="relative rounded-lg shadow-elegant w-full object-cover aspect-[3/4]"
                   style={{ filter: 'brightness(1.1) contrast(1.1) saturate(1.1)' }}
