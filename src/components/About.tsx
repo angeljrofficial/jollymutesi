@@ -6,7 +6,6 @@ import ParallaxSection from './ParallaxSection';
 
 const About = () => {
   return (
-<<<<<<< HEAD
     <section id="about" className="py-20 md:py-32 bg-gradient-to-br from-background via-secondary/5 to-accent/10 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -76,11 +75,6 @@ const About = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
-=======
-    <section id="about" className="py-20 md:py-32 bg-gradient-elegant">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
           <RevealOnScroll direction="left" className="order-2 md:order-1">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
               About Jolly Mutesi
@@ -105,75 +99,45 @@ const About = () => {
               </p>
             </div>
 
-<<<<<<< HEAD
-
-=======
-            <motion.div 
-              className="mt-8 p-6 bg-secondary/30 rounded-lg border-l-4 border-primary"
-              whileHover={{ x: 10 }}
-              transition={{ type: 'spring', stiffness: 300 }}
+            {/* Inspiration Quote Card */}
+            <motion.div
+              className="mt-8 p-6 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-primary/20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              viewport={{ once: true }}
             >
-              <Quote className="h-8 w-8 text-primary mb-4" />
-              <p className="text-xl font-display italic text-foreground">
-                "Empowerment begins with belief in yourself."
+              <motion.div
+                className="flex items-center gap-2 mb-3"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Quote className="h-6 w-6 text-primary" />
+                <span className="text-lg font-bold text-primary tracking-wide">INSPIRATION</span>
+              </motion.div>
+              <p className="text-foreground/90 italic text-base leading-relaxed font-medium">
+                "Empowerment begins with belief in yourself and extends to uplifting others."
               </p>
-              <p className="text-sm text-muted-foreground mt-2">— Jolly Mutesi</p>
+              <p className="text-muted-foreground text-sm mt-3 font-semibold">— Jolly Mutesi</p>
             </motion.div>
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
           </RevealOnScroll>
 
           <RevealOnScroll direction="right" className="order-1 md:order-2">
             <ParallaxSection offset={30}>
-<<<<<<< HEAD
               <motion.div
-=======
-              <motion.div 
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                 className="relative"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-<<<<<<< HEAD
                 <motion.div
-=======
-                <motion.div 
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                   className="absolute -inset-4 bg-gradient-gold rounded-lg opacity-20 blur-xl"
                   animate={{ opacity: [0.15, 0.25, 0.15] }}
                   transition={{ repeat: Infinity, duration: 3 }}
                 />
-<<<<<<< HEAD
-                {/* Content Card Overlay */}
-                <motion.div
-                  className="absolute top-6 left-6 right-6 z-10 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-primary/20"
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <motion.div
-                    className="flex items-center gap-2 mb-2"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <Quote className="h-5 w-5 text-primary" />
-                    <span className="text-sm font-semibold text-primary">Inspiration</span>
-                  </motion.div>
-                  <p className="text-sm text-foreground/80 italic">
-                    "Empowerment begins with belief in yourself and extends to uplifting others."
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-2">— Jolly Mutesi</p>
-                </motion.div>
                 <img
                   src="src/assets/aboutimage.png"
                   alt="Jolly Mutesi professional portrait"
                   className="relative rounded-lg shadow-elegant w-full object-cover aspect-[3/4]"
                   style={{ filter: 'brightness(1.1) contrast(1.1) saturate(1.1)' }}
-=======
-                <img
-                  src={aboutPortrait}
-                  alt="Jolly Mutesi professional portrait"
-                  className="relative rounded-lg shadow-elegant w-full object-cover aspect-[3/4]"
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                 />
               </motion.div>
             </ParallaxSection>

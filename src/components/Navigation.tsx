@@ -33,38 +33,23 @@ const Navigation = () => {
 
   return (
     <nav
-<<<<<<< HEAD
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-lg shadow-2xl border-b border-secondary/10'
-          : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-background/95 backdrop-blur-lg shadow-2xl border-b border-secondary/10' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className={`flex items-center justify-between transition-all duration-500 ${
+        <div className={`flex items-center justify-between transition-all duration-300 ${
           isScrolled ? 'h-16' : 'h-20'
         }`}>
-=======
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-soft' : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
           <a
             href="#home"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('#home');
             }}
-<<<<<<< HEAD
-            className={`font-display font-bold bg-gradient-gold bg-clip-text text-transparent transition-all duration-500 ${
+            className={`font-display font-bold bg-gradient-gold bg-clip-text text-transparent transition-all duration-300 ${
               isScrolled ? 'text-xl' : 'text-2xl'
             }`}
-=======
-            className="text-2xl font-display font-bold bg-gradient-gold bg-clip-text text-transparent"
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
           >
             Jolly Mutesi
           </a>
@@ -79,18 +64,12 @@ const Navigation = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-<<<<<<< HEAD
                 className={`font-medium transition-all duration-300 hover:text-primary relative group ${
                   isScrolled ? 'text-foreground/90' : 'text-foreground'
                 }`}
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
-=======
-                className="text-foreground hover:text-primary transition-smooth font-medium"
-              >
-                {link.name}
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
               </a>
             ))}
           </div>
@@ -99,7 +78,6 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-<<<<<<< HEAD
             className={`md:hidden transition-all duration-300 ${
               isScrolled ? 'hover:bg-secondary/10' : 'hover:bg-white/10'
             }`}
@@ -114,26 +92,15 @@ const Navigation = () => {
                 isScrolled ? 'text-foreground' : 'text-white'
               }`} />
             )}
-=======
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-<<<<<<< HEAD
           <div className={`md:hidden pb-6 animate-fade-in border-t border-secondary/10 ${
             isScrolled ? 'bg-background/95 backdrop-blur-lg' : 'bg-background/90 backdrop-blur-md'
           }`}>
             <div className="flex flex-col gap-4 pt-4">
-=======
-          <div className="md:hidden pb-6 animate-fade-in">
-            <div className="flex flex-col gap-4">
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -142,13 +109,9 @@ const Navigation = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-<<<<<<< HEAD
                   className={`font-medium py-2 px-2 rounded-lg transition-all duration-300 hover:bg-secondary/10 hover:text-primary ${
                     isScrolled ? 'text-foreground/90' : 'text-foreground'
                   }`}
-=======
-                  className="text-foreground hover:text-primary transition-smooth font-medium py-2"
->>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                 >
                   {link.name}
                 </a>
