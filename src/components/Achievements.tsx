@@ -1,5 +1,7 @@
 import { Crown, Award, Users, Mic } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import RevealOnScroll from './RevealOnScroll';
 
 const achievements = [
   {
@@ -32,41 +34,55 @@ const Achievements = () => {
   return (
     <section id="achievements" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
+        <RevealOnScroll className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
             Achievements & Awards
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A journey of excellence, leadership, and impact across multiple platforms
           </p>
-        </div>
+        </RevealOnScroll>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {achievements.map((achievement, index) => {
             const Icon = achievement.icon;
             return (
-              <Card
-                key={index}
-                className="group hover:shadow-elegant transition-smooth border-2 hover:border-primary/20 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center group-hover:scale-110 transition-smooth">
-                        <Icon className="h-8 w-8 text-primary-foreground" />
+              <RevealOnScroll key={index} delay={index * 0.1} direction="up">
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <Card className="group hover:shadow-elegant transition-smooth border-2 hover:border-primary/20 h-full">
+                    <CardContent className="p-8">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                          <motion.div 
+                            className="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center"
+                            whileHover={{ rotate: 360, scale: 1.1 }}
+                            transition={{ duration: 0.6 }}
+                          >
+                            <Icon className="h-8 w-8 text-primary-foreground" />
+                          </motion.div>
+                        </div>
+                        <div className="flex-1">
+                          <motion.div 
+                            className="text-sm font-semibold text-primary mb-1"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                          >
+                            {achievement.year}
+                          </motion.div>
+                          <h3 className="text-xl font-display font-bold mb-2 text-foreground">
+                            {achievement.title}
+                          </h3>
+                          <p className="text-muted-foreground">{achievement.description}</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm font-semibold text-primary mb-1">{achievement.year}</div>
-                      <h3 className="text-xl font-display font-bold mb-2 text-foreground">
-                        {achievement.title}
-                      </h3>
-                      <p className="text-muted-foreground">{achievement.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </RevealOnScroll>
             );
           })}
         </div>

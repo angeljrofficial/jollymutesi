@@ -1,12 +1,15 @@
 import aboutPortrait from '@/assets/about-portrait.jpg';
 import { Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
+import RevealOnScroll from './RevealOnScroll';
+import ParallaxSection from './ParallaxSection';
 
 const About = () => {
   return (
     <section id="about" className="py-20 md:py-32 bg-gradient-elegant">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1 animate-slide-up">
+          <RevealOnScroll direction="left" className="order-2 md:order-1">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
               About Jolly Mutesi
             </h2>
@@ -30,25 +33,39 @@ const About = () => {
               </p>
             </div>
 
-            <div className="mt-8 p-6 bg-secondary/30 rounded-lg border-l-4 border-primary">
+            <motion.div 
+              className="mt-8 p-6 bg-secondary/30 rounded-lg border-l-4 border-primary"
+              whileHover={{ x: 10 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
               <Quote className="h-8 w-8 text-primary mb-4" />
               <p className="text-xl font-display italic text-foreground">
                 "Empowerment begins with belief in yourself."
               </p>
               <p className="text-sm text-muted-foreground mt-2">— Jolly Mutesi</p>
-            </div>
-          </div>
+            </motion.div>
+          </RevealOnScroll>
 
-          <div className="order-1 md:order-2 animate-fade-in">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-gold rounded-lg opacity-20 blur-xl"></div>
-              <img
-                src={aboutPortrait}
-                alt="Jolly Mutesi professional portrait"
-                className="relative rounded-lg shadow-elegant w-full object-cover aspect-[3/4]"
-              />
-            </div>
-          </div>
+          <RevealOnScroll direction="right" className="order-1 md:order-2">
+            <ParallaxSection offset={30}>
+              <motion.div 
+                className="relative"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div 
+                  className="absolute -inset-4 bg-gradient-gold rounded-lg opacity-20 blur-xl"
+                  animate={{ opacity: [0.15, 0.25, 0.15] }}
+                  transition={{ repeat: Infinity, duration: 3 }}
+                />
+                <img
+                  src={aboutPortrait}
+                  alt="Jolly Mutesi professional portrait"
+                  className="relative rounded-lg shadow-elegant w-full object-cover aspect-[3/4]"
+                />
+              </motion.div>
+            </ParallaxSection>
+          </RevealOnScroll>
         </div>
       </div>
     </section>
