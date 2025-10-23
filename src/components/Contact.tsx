@@ -4,7 +4,12 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+<<<<<<< HEAD
 import { Instagram, Twitter, Facebook, Youtube } from 'lucide-react';
+=======
+import { Instagram, Linkedin, Facebook, Youtube } from 'lucide-react';
+import { motion } from 'framer-motion';
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
 import RevealOnScroll from './RevealOnScroll';
 
 const Contact = () => {
@@ -25,10 +30,17 @@ const Contact = () => {
   };
 
   const socialLinks = [
+<<<<<<< HEAD
     { icon: Instagram, href: 'https://www.instagram.com/mutesi_jolly/', label: 'Instagram' },
     { icon: Twitter, href: 'https://x.com/JollyMutesi', label: 'X (Twitter)' },
     { icon: Facebook, href: 'https://facebook.com/1702768153276387?ref=pl_edit_xav_ig_profile_page_web', label: 'Facebook' },
     { icon: Youtube, href: 'https://www.youtube.com/@missjollymutesi4044', label: 'YouTube' },
+=======
+    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Youtube, href: '#', label: 'YouTube' },
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
   ];
 
   return (
@@ -44,7 +56,14 @@ const Contact = () => {
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.2} className="max-w-4xl mx-auto">
+<<<<<<< HEAD
           <div>
+=======
+          <motion.div
+            whileHover={{ y: -5 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
             <Card className="shadow-elegant border-2">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -91,7 +110,11 @@ const Contact = () => {
                       placeholder="Tell me how I can help..."
                     />
                   </div>
+<<<<<<< HEAD
                   <div>
+=======
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                     <Button
                       type="submit"
                       size="lg"
@@ -99,7 +122,11 @@ const Contact = () => {
                     >
                       Send Message
                     </Button>
+<<<<<<< HEAD
                   </div>
+=======
+                  </motion.div>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                 </form>
 
                 <div className="mt-12 pt-8 border-t border-border">
@@ -110,23 +137,42 @@ const Contact = () => {
                     {socialLinks.map((social, index) => {
                       const Icon = social.icon;
                       return (
+<<<<<<< HEAD
                         <a
+=======
+                        <motion.a
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                           key={social.label}
                           href={social.href}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-12 h-12 rounded-full bg-secondary hover:bg-primary flex items-center justify-center transition-smooth group"
                           aria-label={social.label}
+<<<<<<< HEAD
                         >
                           <Icon className="h-5 w-5 text-secondary-foreground group-hover:text-primary-foreground transition-smooth" />
                         </a>
+=======
+                          whileHover={{ scale: 1.2, rotate: 5 }}
+                          whileTap={{ scale: 0.9 }}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          <Icon className="h-5 w-5 text-secondary-foreground group-hover:text-primary-foreground transition-smooth" />
+                        </motion.a>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                       );
                     })}
                   </div>
                 </div>
               </CardContent>
             </Card>
+<<<<<<< HEAD
           </div>
+=======
+          </motion.div>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
         </RevealOnScroll>
       </div>
     </section>

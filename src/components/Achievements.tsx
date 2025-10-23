@@ -48,11 +48,19 @@ const Achievements = () => {
             const Icon = achievement.icon;
             return (
               <RevealOnScroll key={index} delay={index * 0.1} direction="up">
+<<<<<<< HEAD
                 <div>
+=======
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                   <Card className="group hover:shadow-elegant transition-smooth border-2 hover:border-primary/20 h-full">
                     <CardContent className="p-8">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0">
+<<<<<<< HEAD
                           <div className="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center">
                             <Icon className="h-8 w-8 text-primary-foreground" />
                           </div>
@@ -61,6 +69,25 @@ const Achievements = () => {
                           <div className="text-sm font-semibold text-primary mb-1">
                             {achievement.year}
                           </div>
+=======
+                          <motion.div 
+                            className="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center"
+                            whileHover={{ rotate: 360, scale: 1.1 }}
+                            transition={{ duration: 0.6 }}
+                          >
+                            <Icon className="h-8 w-8 text-primary-foreground" />
+                          </motion.div>
+                        </div>
+                        <div className="flex-1">
+                          <motion.div 
+                            className="text-sm font-semibold text-primary mb-1"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                          >
+                            {achievement.year}
+                          </motion.div>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                           <h3 className="text-xl font-display font-bold mb-2 text-foreground">
                             {achievement.title}
                           </h3>
@@ -69,7 +96,11 @@ const Achievements = () => {
                       </div>
                     </CardContent>
                   </Card>
+<<<<<<< HEAD
                 </div>
+=======
+                </motion.div>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
               </RevealOnScroll>
             );
           })}

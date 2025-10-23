@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import RevealOnScroll from './RevealOnScroll';
 
 const galleryImages = [
+<<<<<<< HEAD
   { src: 'https://pbs.twimg.com/media/G2reTNjWgAEu4H8?format=jpg&name=small', alt: 'Miss Rwanda 2016 Crowning', category: 'Pageant' },
   { src: 'https://pbs.twimg.com/media/G1Egn1LXIAA1vwT?format=png&name=small', alt: 'Motivational Speaking Event', category: 'Speaking' },
   { src: 'https://pbs.twimg.com/media/GqLM1qJW0AANFb_?format=jpg&name=360x360', alt: 'Community Service', category: 'Activism' },
@@ -16,10 +17,19 @@ const galleryImages = [
   { src: 'https://pbs.twimg.com/media/GftnYNtXkAAyS_y?format=jpg&name=360x360', alt: 'Professional Portrait', category: 'Modeling' },
   { src: 'https://pbs.twimg.com/media/GfQZVFKXMAA66e8?format=jpg&name=360x360', alt: 'Community Work', category: 'Activism' },
   { src: 'https://pbs.twimg.com/media/Ge06bNyWAAA1RAq?format=jpg&name=360x360', alt: 'Youth Empowerment', category: 'Speaking' },
+=======
+  { src: heroImage, alt: 'Miss Rwanda 2016 Crowning', category: 'Pageant' },
+  { src: speakingEvent, alt: 'Motivational Speaking Event', category: 'Speaking' },
+  { src: communityWork, alt: 'Community Service', category: 'Activism' },
+  { src: nutritionProgram, alt: 'Nutrition Program', category: 'Activism' },
+  { src: youthWorkshop, alt: 'Youth Workshop', category: 'Speaking' },
+  { src: aboutPortrait, alt: 'Professional Portrait', category: 'Modeling' },
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
 ];
 
 const Gallery = () => {
   return (
+<<<<<<< HEAD
     <section id="gallery" className="py-20 md:py-32 bg-gradient-to-br from-background via-secondary/5 to-accent/5 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -142,6 +152,55 @@ const Gallery = () => {
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ repeat: Infinity, duration: 2, delay: index * 0.2 }}
                 />
+=======
+    <section id="gallery" className="py-20 md:py-32 bg-background">
+      <div className="container mx-auto px-4">
+        <RevealOnScroll className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
+            Gallery
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            A visual journey through pageantry, public speaking, community service, and empowerment
+          </p>
+        </RevealOnScroll>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {galleryImages.map((image, index) => (
+            <RevealOnScroll key={index} delay={index * 0.1} direction="up">
+              <motion.div
+                className="group relative overflow-hidden rounded-lg shadow-soft hover:shadow-elegant transition-smooth aspect-[4/3] cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <motion.img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.15 }}
+                  transition={{ duration: 0.6 }}
+                />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div 
+                    className="p-6 w-full"
+                    initial={{ y: 20 }}
+                    whileHover={{ y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.span 
+                      className="inline-block px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full mb-2"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      {image.category}
+                    </motion.span>
+                    <p className="text-white font-medium">{image.alt}</p>
+                  </motion.div>
+                </motion.div>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
               </motion.div>
             </RevealOnScroll>
           ))}

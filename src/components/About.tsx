@@ -6,6 +6,7 @@ import ParallaxSection from './ParallaxSection';
 
 const About = () => {
   return (
+<<<<<<< HEAD
     <section id="about" className="py-20 md:py-32 bg-gradient-to-br from-background via-secondary/5 to-accent/10 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -75,6 +76,11 @@ const About = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
+=======
+    <section id="about" className="py-20 md:py-32 bg-gradient-elegant">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
           <RevealOnScroll direction="left" className="order-2 md:order-1">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
               About Jolly Mutesi
@@ -99,21 +105,44 @@ const About = () => {
               </p>
             </div>
 
+<<<<<<< HEAD
 
+=======
+            <motion.div 
+              className="mt-8 p-6 bg-secondary/30 rounded-lg border-l-4 border-primary"
+              whileHover={{ x: 10 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <Quote className="h-8 w-8 text-primary mb-4" />
+              <p className="text-xl font-display italic text-foreground">
+                "Empowerment begins with belief in yourself."
+              </p>
+              <p className="text-sm text-muted-foreground mt-2">— Jolly Mutesi</p>
+            </motion.div>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
           </RevealOnScroll>
 
           <RevealOnScroll direction="right" className="order-1 md:order-2">
             <ParallaxSection offset={30}>
+<<<<<<< HEAD
               <motion.div
+=======
+              <motion.div 
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                 className="relative"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
+<<<<<<< HEAD
                 <motion.div
+=======
+                <motion.div 
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                   className="absolute -inset-4 bg-gradient-gold rounded-lg opacity-20 blur-xl"
                   animate={{ opacity: [0.15, 0.25, 0.15] }}
                   transition={{ repeat: Infinity, duration: 3 }}
                 />
+<<<<<<< HEAD
                 {/* Content Card Overlay */}
                 <motion.div
                   className="absolute top-6 left-6 right-6 z-10 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-primary/20"
@@ -139,6 +168,12 @@ const About = () => {
                   alt="Jolly Mutesi professional portrait"
                   className="relative rounded-lg shadow-elegant w-full object-cover aspect-[3/4]"
                   style={{ filter: 'brightness(1.1) contrast(1.1) saturate(1.1)' }}
+=======
+                <img
+                  src={aboutPortrait}
+                  alt="Jolly Mutesi professional portrait"
+                  className="relative rounded-lg shadow-elegant w-full object-cover aspect-[3/4]"
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                 />
               </motion.div>
             </ParallaxSection>

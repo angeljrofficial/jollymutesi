@@ -55,6 +55,7 @@ const Projects = () => {
             const Icon = project.icon;
             return (
               <RevealOnScroll key={index} delay={index * 0.15} direction="up">
+<<<<<<< HEAD
                 <div>
                   <Card className="group overflow-hidden border-2 hover:border-primary/20 hover:shadow-elegant transition-smooth h-full">
                     <div className="relative h-64 overflow-hidden">
@@ -66,12 +67,35 @@ const Projects = () => {
                       <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-elegant">
                         <Icon className="h-6 w-6 text-primary-foreground" />
                       </div>
+=======
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <Card className="group overflow-hidden border-2 hover:border-primary/20 hover:shadow-elegant transition-smooth h-full">
+                    <div className="relative h-64 overflow-hidden">
+                      <motion.img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.6 }}
+                      />
+                      <motion.div 
+                        className="absolute top-4 right-4 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-elegant"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <Icon className="h-6 w-6 text-primary-foreground" />
+                      </motion.div>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
                     </div>
                     <CardContent className="p-6">
                       <h3 className="text-2xl font-display font-bold mb-3 text-foreground">
                         {project.title}
                       </h3>
                       <p className="text-muted-foreground mb-4">{project.description}</p>
+<<<<<<< HEAD
                       <div className="pt-4 border-t border-border">
                         <span className="text-sm font-semibold text-primary">
                           <AnimatedCounter
@@ -83,6 +107,23 @@ const Projects = () => {
                     </CardContent>
                   </Card>
                 </div>
+=======
+                      <motion.div 
+                        className="pt-4 border-t border-border"
+                        whileHover={{ x: 5 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
+                        <span className="text-sm font-semibold text-primary">
+                          <AnimatedCounter 
+                            end={project.impactNumber} 
+                            suffix={index === 1 ? "+ meals provided monthly" : index === 2 ? "+ workshops conducted" : "+ children reached annually"} 
+                          />
+                        </span>
+                      </motion.div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+>>>>>>> d8248894b1745140dfb0398dbbddefd329649113
               </RevealOnScroll>
             );
           })}
