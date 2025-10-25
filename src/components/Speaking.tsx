@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Users } from 'lucide-react';
+import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
+import { Link } from 'react-router-dom';
 
 const Speaking = () => {
   const speakingEngagements = [
     {
+      id: '1',
       title: 'TEDx Kigali: Empowering Young Leaders',
       date: 'March 2018',
       location: 'Kigali, Rwanda',
@@ -15,6 +17,7 @@ const Speaking = () => {
       impact: 'Inspired 200+ young women to start leadership programs'
     },
     {
+      id: '2',
       title: 'Women in Leadership Summit',
       date: 'June 2019',
       location: 'Nairobi, Kenya',
@@ -25,6 +28,7 @@ const Speaking = () => {
       impact: 'Led to partnerships with 5 corporate organizations'
     },
     {
+      id: '3',
       title: 'East African Youth Conference',
       date: 'September 2020',
       location: 'Dar es Salaam, Tanzania',
@@ -35,6 +39,7 @@ const Speaking = () => {
       impact: 'Established youth mentorship network across 3 countries'
     },
     {
+      id: '4',
       title: 'Miss East Africa Pageant Opening Ceremony',
       date: 'November 2021',
       location: 'Kampala, Uganda',
@@ -45,6 +50,7 @@ const Speaking = () => {
       impact: 'Increased pageant focus on social impact by 40%'
     },
     {
+      id: '5',
       title: 'Corporate Leadership Workshop',
       date: 'February 2022',
       location: 'Addis Ababa, Ethiopia',
@@ -55,6 +61,7 @@ const Speaking = () => {
       impact: 'Implemented diversity initiatives in 12 companies'
     },
     {
+      id: '6',
       title: 'International Women\'s Day Celebration',
       date: 'March 2023',
       location: 'Kigali, Rwanda',
@@ -314,17 +321,39 @@ const Speaking = () => {
                     >
                       💫 Impact:
                     </motion.p>
-                    <motion.p
-                      className="text-xs text-muted-foreground"
-                      whileHover={{ color: '#6366f1' }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {engagement.impact}
-                    </motion.p>
-                  </motion.div>
+                  <motion.p
+                    className="text-xs text-muted-foreground"
+                    whileHover={{ color: '#6366f1' }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {engagement.impact}
+                  </motion.p>
                 </motion.div>
 
+                {/* Read More Link */}
+                <motion.div
+                  className="mt-4 pt-4 border-t border-secondary/10"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.7, duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <Link
+                    to={`/speaking/${engagement.id}`}
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold text-sm transition-colors duration-300 group/link"
+                  >
+                    <motion.span
+                      whileHover={{ x: 3 }}
+                      transition={{ type: 'spring', stiffness: 400 }}
+                    >
+                      Read Full Story
+                    </motion.span>
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                </motion.div>
               </motion.div>
+
+            </motion.div>
             </RevealOnScroll>
           ))}
         </div>
