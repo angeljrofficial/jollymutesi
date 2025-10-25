@@ -181,10 +181,9 @@ const Speaking = () => {
               <motion.div
                 className="group bg-background/90 backdrop-blur-xl rounded-2xl overflow-hidden shadow-xl hover:shadow-3xl transition-all duration-500 border border-secondary/20"
                 whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.1, duration: 0.6, type: 'spring', stiffness: 300, damping: 25 }}
                 viewport={{ once: true }}
               >
                 {/* Animated border gradient */}
@@ -268,7 +267,7 @@ const Speaking = () => {
                   <img
                     src={engagement.image}
                     alt={engagement.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   />
 
                   {/* Floating impact badge */}

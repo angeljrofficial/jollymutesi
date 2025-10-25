@@ -91,10 +91,9 @@ const Gallery = () => {
               <motion.div
                 className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 aspect-[4/3] cursor-pointer"
                 whileHover={{ scale: 1.03, y: -10 }}
-                transition={{ type: 'spring', stiffness: 300 }}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.1, duration: 0.6, type: 'spring', stiffness: 300 }}
                 viewport={{ once: true }}
               >
                 <motion.div
@@ -105,7 +104,7 @@ const Gallery = () => {
                 <motion.img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 />

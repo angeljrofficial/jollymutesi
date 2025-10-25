@@ -61,13 +61,13 @@ const Projects = () => {
                 >
                   <Card className="group overflow-hidden border-2 hover:border-primary/20 hover:shadow-elegant transition-smooth h-full">
                     <div className="relative h-64 overflow-hidden">
-                      <motion.img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.6 }}
-                      />
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  />
                       <motion.div
                         className="absolute top-4 right-4 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-elegant"
                         whileHover={{ rotate: 360 }}

@@ -132,10 +132,9 @@ const MediaPress = () => {
               <motion.div
                 className="group relative bg-background/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-primary/10"
                 whileHover={{ y: -10, scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300 }}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.1, duration: 0.6, type: 'spring', stiffness: 300 }}
                 viewport={{ once: true }}
               >
                 <motion.div
@@ -146,7 +145,7 @@ const MediaPress = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4"
